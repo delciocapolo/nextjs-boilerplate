@@ -1,8 +1,8 @@
 "use client";
 
-import Env from "@src/config/environment";
-import { getToken } from "@utils/cookies";
 import axios from "axios";
+import Env from "@src/config/environment";
+import { getToken } from "./utils/token";
 
 const baseUrl = Env.NEXT_PUBLIC_API_BASE_URL;
 const client = axios.create({

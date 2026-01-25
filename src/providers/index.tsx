@@ -3,6 +3,7 @@
 import { ComponentProps } from "@shared/@types/global-props";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AppProvider } from "./app-context";
 
 const queryClient = new QueryClient({});
 
@@ -14,7 +15,9 @@ export default function GlobalProvider({ children }: ComponentProps) {
             defaultTheme="system"
             enableSystem
          >
-            {children}
+            <AppProvider>
+               {children}
+            </AppProvider>
          </NextThemesProvider>
       </QueryClientProvider>
    );
