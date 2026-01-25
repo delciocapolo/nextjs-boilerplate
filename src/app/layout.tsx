@@ -1,6 +1,6 @@
 import Env from "@src/config/environment";
 import "../global/styles/globals.css";
-import { roboto } from "@src/fonts";
+import { manrope, roboto} from "@src/fonts";
 import type { Metadata, Viewport } from "next";
 import GlobalProvider from "@src/providers";
 
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
   icons: "/favicon.png",
   description: Env.NEXT_PUBLIC_APP_DESCRIPTION,
   keywords: [
-    "Young Connect",
-    "Young Connect Angola",
-    "Young Connect Tecnologia",
+    "Nextjs Template",
+    "Nextjs Template [Angola]",
+    "Nextjs Template [Tecnologia]",
   ],
 };
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="pt-PT" suppressHydrationWarning>
-      <body className={`${roboto.variable} antialiased`}>
+      <body className={`${manrope.variable} ${roboto.variable} antialiased`}>
         <GlobalProvider>
           {children}
         </GlobalProvider>

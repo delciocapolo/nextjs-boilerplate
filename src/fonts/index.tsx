@@ -1,4 +1,10 @@
-import { Roboto } from "next/font/google"
+import { Manrope, Roboto } from "next/font/google";
+
+const manrope = Manrope({
+   display: "swap",
+   subsets: ["latin"],
+   variable: "--font-manrope",
+});
 
 const roboto = Roboto({
    display: "swap",
@@ -7,5 +13,6 @@ const roboto = Roboto({
 });
 
 export {
+   manrope,
    roboto,
 }
