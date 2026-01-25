@@ -1,15 +1,17 @@
 import { createContext, useContext, useEffect } from "react";
+import { useUserStore } from "./user-store";
 
 type Context = {};
 
 const AppContext = createContext<Context | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const { initializeUser } = useUserStore()
     const appContext: Context = {};
 
     useEffect(() => {
-        console.log("CAIU AQUI");
-    }, [])
+        initializeUser();
+    }, [initializeUser])
 
     return (
         <AppContext.Provider value={appContext}>
